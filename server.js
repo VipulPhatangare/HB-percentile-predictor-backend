@@ -47,6 +47,7 @@ app.post('/api/calculate-percentile', (req, res) => {
     percentile = Math.min(100, Math.max(0, percentile));
     percentile = percentile * 0.9 + (Math.random() * 5); // Add some randomness
     
+    console.log(percentile);
     // Return the result
     res.json({
         percentile,
