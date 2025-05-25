@@ -3,16 +3,16 @@ const cors = require('cors');
 const app = express();
 require('dotenv').config();
 const { createClient } = require('@supabase/supabase-js');
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 
 // Middleware
 app.use(cors());
 app.use(express.json());
 
 
-
-const supabase = createClient(process.env.SUPABASEURL, process.env.SUPABASEKEY);
-
+const SUPABASEURL = "https://qxrphwzvpgkmpauocdsv.supabase.co"
+const SUPABASEKEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF4cnBod3p2cGdrbXBhdW9jZHN2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDU0MTU5NzksImV4cCI6MjA2MDk5MTk3OX0.lQUuH2hUcV9Pf0xhn1_0b0fvLCd4JQMYeor_BKffk3Q"
+const supabase = createClient(SUPABASEURL, SUPABASEKEY);
 
 
 async function mathPercentile(marks, difficulty) {
