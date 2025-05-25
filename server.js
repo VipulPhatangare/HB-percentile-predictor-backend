@@ -14,14 +14,6 @@ app.use(express.json());
 const supabase = createClient(process.env.SUPABASEURL, process.env.SUPABASEKEY);
 
 
-// Mock database for historical data (in a real app, use a proper database)
-const historicalData = {
-    "2025-04-19": {
-        "1": { minScore: 180, maxScore: 200, avgScore: 190 },
-        "2": { minScore: 175, maxScore: 195, avgScore: 185 }
-    },
-};
-
 
 async function mathPercentile(marks, difficulty) {
 
